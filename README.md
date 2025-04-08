@@ -1,3 +1,3 @@
 # Arcane-Repo
 This is a website that I created based off of League of Legends, "Arcane". I was turned into a Netflix series on the 6th of November 2021 and I really enjoyed watching it so decided to create a website about it.
-![Cool Arcane Image.](https://d2w9rnfcy7mm78.cloudfront.net/35836458/original_d2cb3d026303f29f505e14ad8d8d056e.png?1744094180?bc=0)
+![Cool Arcane Image.](![https://d2w9rnfcy7mm78.cloudfront.net/35836458/original_d2cb3d026303f29f505e14ad8d8d056e.png?1744094180?bc=0](https://d2w9rnfcy7mm78.cloudfront.net/35836458/original_d2cb3d026303f29f505e14ad8d8d056e.png?1744094180?bc=0))
