@@ -1,0 +1,234 @@
+body {
+    background-color: #030A12;
+    color: #fff2e0;
+    margin: 0;
+    font-size: 17px;
+    overflow-x: hidden;
+}
+
+/* import fonts */
+@font-face {
+    font-family: 'Arcane Nine';
+    src: url("font/Arcane\ Nine.otf") format("opentype");
+}
+@font-face {
+    font-family: 'Beau-B';
+    src: url("font/BeaufortforLOL-Bold.ttf") format("opentype");
+}
+@font-face {
+    font-family: 'Beau-M';
+    src: url('font/BeaufortforLOL-Medium.ttf') format("opentype");
+}
+@font-face {
+    font-family: 'Spiegel';
+    src: url('font/SpiegelSansCd-5Regular_TRIAL.otf') format("opentype");
+}
+@font-face {
+    font-family: 'Spiegel-B';
+    src: url('font/SpiegelSans-7Bold_TRIAL.otf') format('opentype');
+}
+
+/* typography */
+#h1{
+    font-family: 'Beau-B', sans-serif;
+    font-size: 40pt;
+    letter-spacing: 0.05em;
+    line-height: 42pt;
+    text-transform: uppercase;
+}
+#h2{
+    font-family: 'Beau-B', sans-serif;
+    font-size: 28pt;
+    letter-spacing: 0.05em;
+    line-height: 32pt;
+    text-transform: uppercase;
+}
+#h3{
+    font-family: 'Beau-B', sans-serif;
+    font-size: 23pt;
+    letter-spacing: 0.05em;
+    line-height: 28pt;
+    text-transform: uppercase;
+}
+#h4{
+    font-family: 'Beau-B', sans-serif;
+    font-size: 18pt;
+    letter-spacing: 0.05em;
+    line-height: 22pt;
+    text-transform: uppercase;
+}
+#h5{
+    font-family: 'Beau-B', sans-serif;
+    font-size: 14pt;
+    letter-spacing: 0.075em;
+    line-height: 18pt;
+    text-transform: uppercase;
+}
+#medium-body{
+    font-family: 'Spiegel', sans-serif;
+    font-size: 14pt;
+    letter-spacing: 0.025em;
+    line-height: 20pt;
+}
+#bold-label{
+    font-family: 'Spiegel-B', sans-serif;
+    font-size: 11pt;
+    letter-spacing: 0.05em;
+    line-height: 16pt;
+}
+#large-number{
+    font-family: 'Beau-M', sans-serif;
+    font-size: 57pt;
+    letter-spacing: 0.025em;
+    line-height: 62pt;
+}
+#stat-number{
+    font-family: 'Beau-B', sans-serif;
+    font-size: 11pt;
+    letter-spacing: 0.05em;
+    line-height: 20pt;
+}
+
+/* text */
+.title{
+    color: #fff2e0;
+}
+.topic{
+    color: #aa7645;
+}
+.des{
+    color: #999186;
+}
+#h1, #h2, #h3, #h4, #h5 {
+    padding-top: 0.2em;
+    padding-bottom: 0.4em;
+}
+
+/* header */
+a{
+    text-decoration: none;
+    color: #aa7645
+}
+nav{
+    width: 1140px;
+    max-width: 80%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+    left: 5%;
+    top: 5px;
+}
+nav a {
+    margin-right: clamp(20px, 2vw, 60px);
+}
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;  
+    position: absolute;
+    top: 15px;
+    z-index: 1300;
+}
+.logo img {
+    width: auto;
+    height: clamp(53px, 10vw, 8em);
+}
+.social-media a#riotGames img{
+    width: auto;
+    height: clamp(30px, 2vh, 8em) !important;
+}
+.social-media{
+    width: 1140px;
+    max-width: 80%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+    right: 5%; 
+    justify-content: flex-end; 
+    top: 15px;
+}
+.social-media a{
+    margin-left: clamp(25px, 2vw, 60px);
+}
+.social-media a img{
+    width: 30px;
+    height: auto;
+}
+
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* hamburger menu */
+.H-Menu {
+    position: fixed;
+    top: 10px;
+    right: 5%;
+    z-index: 9999;
+}
+
+.H-Menu img {
+    width: 2em;
+    cursor: pointer;
+    z-index: 9900;
+}
+
+.H-M-Content {
+    display: none;
+    position: absolute;
+    right: -5vw;
+    top: -10px;
+    background-color: rgb(1, 10, 19);
+    min-width: 13em;
+    padding: 30px 30px;
+    height: 100vh;
+    z-index: 9000;
+}
+
+.H-M-Content a {
+    display: block;
+    margin: 8px 0;
+    text-decoration: none;
+    color: rgb(240, 230, 210);
+    padding-bottom: 0.5em;
+}
+.H-M-Content a:hover{
+    text-decoration: underline;
+}
+
+.H-M-Content a img{
+    height: 2em;
+    width: auto;
+    padding-bottom: 0.5em;
+}
+
+@media screen and (max-width: 900px) {
+    .social-media a,
+    header nav a {
+        display: none;
+    }
+
+    .menu,
+    .menu-icon {
+        display: inline-block;
+    }
+}
+
+
+
+
+
+/* header */
+a{
+    text-decoration: none;
+    color: rgb(240, 230, 210);
+    text-decoration: underline;
+}
