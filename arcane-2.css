@@ -448,12 +448,13 @@ header .logo .social-media a img{
 }
 .music#music-img{
     background-image: url('https://d2w9rnfcy7mm78.cloudfront.net/35776200/original_69c1cf4e18a0238c838cd0601e71ce3e.png?1743811557?bc=0');
-    background-color: rgba(1, 10, 19, 0.687); 
+    background-color: rgba(1, 10, 19, 0.687);  
     z-index: -10;
     height: 100%;
     background-size: cover;
     background-position: center;
     position: absolute;
+    background-blend-mode: overlay;
 }
 .music .content{
     position: absolute;

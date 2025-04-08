@@ -34,7 +34,7 @@ document.querySelectorAll('.toggle-collapse').forEach(button => {
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    var sections = document.querySelectorAll(".about-BG-img");
+    var sections = document.querySelectorAll(".about-BG-img, .music#music-img");
 
     window.addEventListener("scroll", function() {
         sections.forEach(function(section) {
