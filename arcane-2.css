@@ -261,7 +261,12 @@ body {
     }
 }
 
-
+@media screen and (min-width:901px){
+    .H-Menu{
+        display: none;
+    }
+    
+}
 
 
 
@@ -295,7 +300,7 @@ nav a {
 }
 .logo img {
     width: auto;
-    height: clamp(53px, 9vw, 6em);
+    height: clamp(60px, 10vw, 8em);
     z-index: 4;
 }
 .social-media a#riotGames img{
@@ -312,14 +317,16 @@ nav a {
     z-index: 100;
     right: 5%; 
     justify-content: flex-end; 
-    top: 15px;
+    top: 15px !important;
 }
 .social-media a{
     margin-left: clamp(15px, 1vw, 40px);
 }
-.social-media a img{
+header .logo .social-media a img{
     width: auto;
     height: clamp(25px, 2vh, 8em) !important;
+    position: relative;
+    top: -15px;
 }
 
 /* Reset styles */
