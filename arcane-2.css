@@ -445,12 +445,7 @@ header .logo .social-media a img{
     width: 100vw;
     margin: 0;
     z-index: 1;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    position: absolute;
 }
 .music#music-img{
     background-image: url('https://d2w9rnfcy7mm78.cloudfront.net/35776200/original_69c1cf4e18a0238c838cd0601e71ce3e.png?1743811557?bc=0');
@@ -467,6 +462,8 @@ header .logo .social-media a img{
     left: 5%;
     top: 50px;
 }
+
+/* smol images */
 .topic-row {
     display: flex;
     align-items: center;
