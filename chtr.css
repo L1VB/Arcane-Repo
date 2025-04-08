@@ -99,9 +99,12 @@ body {
 .des{
     color: #999186;
 }
-#h1, #h2, #h3, #h4, #h5 {
-    padding-top: 0.2em;
-    padding-bottom: 0.4em;
+#h1{
+    padding-bottom: 20px;
+    color: rgb(240, 230, 210);
+}
+#h2, #h3, #h4, #h5 {
+    padding-bottom: 5px;
 }
 
 /* header */

@@ -101,6 +101,7 @@ body {
 }
 #h1{
     padding-bottom: 20px;
+    color: rgb(240, 230, 210);
 }
 #h2, #h3, #h4, #h5 {
     padding-bottom: 5px;
@@ -445,6 +446,11 @@ header .logo .social-media a img{
     margin: 0;
     z-index: 1;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 .music#music-img{
     background-image: url('https://d2w9rnfcy7mm78.cloudfront.net/35776200/original_69c1cf4e18a0238c838cd0601e71ce3e.png?1743811557?bc=0');
@@ -484,4 +490,15 @@ header .logo .social-media a img{
     text-align: center;
     width: 100%;
     margin-top: 10px; 
+}
+
+.spotify-embed {
+    border-radius: 12px;
+    overflow: hidden;
+    width: 50vw;
+}
+.spotify-embed iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
 }
