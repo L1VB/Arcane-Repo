@@ -50,17 +50,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.getElementById("menuToggle");
-    const menu = document.getElementById("menuContent");
-
-    toggle.addEventListener("click", () => {
-        menu.style.display = (menu.style.display === "block") ? "none" : "block";
+// Add this script to make the hamburger menu functional
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const menuContent = document.getElementById('menuContent');
+    
+    menuToggle.addEventListener('click', function() {
+        if (menuContent.style.display === 'block') {
+            menuContent.style.display = 'none';
+        } else {
+            menuContent.style.display = 'block';
+        }
     });
-
-    document.addEventListener("click", (e) => {
-        if (!document.querySelector(".H-Menu").contains(e.target)) {
-            menu.style.display = "none";
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!menuContent.contains(event.target) && event.target !== menuToggle) {
+            menuContent.style.display = 'none';
         }
     });
 });

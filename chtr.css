@@ -206,41 +206,115 @@ body {
     border: none;
 }
 
+-------------------
+/* hamburger menu styles */
+.H-Menu {
+    position: fixed;
+    top: 10px;
+    right: 5%;
+    z-index: 9999;
+    display: none;
+}
+
+.H-Menu img {
+    width: 2em;
+    cursor: pointer;
+    z-index: 9900;
+}
+
+.H-M-Content {
+    display: none;
+    position: absolute;
+    right: -5vw;
+    top: -10px;
+    background-color: rgb(1, 10, 19);
+    min-width: 13em;
+    padding: 30px 30px;
+    height: 100vh;
+    z-index: 9000;
+}
+
+.H-M-Content a {
+    display: block;
+    margin: 8px 0;
+    text-decoration: none;
+    color: rgb(120, 90, 40);
+    padding-bottom: 0.5em;
+}
+
+.H-M-Content a:hover {
+    text-decoration: underline;
+}
+
+.H-M-Content a img {
+    height: 2em;
+    width: auto;
+    padding-bottom: 0.5em;
+}
+
+a span{
+    color: rgb(200, 155, 60) !important;
+}
+a span:hover{
+    color: rgb(200, 155, 60);
+    text-decoration: underline;
+}
 
 /* new nav */
-.new-nav{
-    width: 100vw;
-    padding-bottom: 25px;
+.new-nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgb(1, 10, 19); 
+    padding-bottom: 0;
 }
-.top-nav{
+
+/* spacer element */
+.nav-spacer {
+    height: calc(3em + 5em);
+    width: 100%;
+    display: block;
+}
+
+.top-nav {
     border-bottom: rgb(30, 40, 45) solid 1.5px;
     height: 3em;
-    position: relative; /* Added for proper positioning */
+    position: relative;
 }
-.bottom-nav{
+
+.bottom-nav {
     border-bottom: rgb(120, 90, 40) solid 1.5px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(1, 10, 19); 
 }
-.new-nav .bottom-nav .topic#h5{
+
+.new-nav .bottom-nav .topic#h5 {
     position: relative;
     padding: 5px 10%;
 }
-.bottom-nav .topic a span{
+
+.bottom-nav .topic a span {
     color: rgb(91, 90, 86);
 }
-.bottom-nav .topic a span:hover{
+
+.bottom-nav .topic a span:hover {
     text-decoration: underline;
     color: rgb(91, 90, 86);
 }
+
 a {
     text-decoration: none;
-    color: rgb(240, 230, 210);
+    color: rgb(120, 90, 40);
 }
-a:hover{
+
+a:hover {
     text-decoration: underline;
 }
+
 .nav-logo {
     display: flex;
     align-items: center;
@@ -248,32 +322,99 @@ a:hover{
     margin-top: 10px;
     position: relative;
 }
-.nav-logo a img#Arcane{
+
+.nav-logo a img#Arcane {
     height: 1.5em;
     width: auto;
 }
-.nav-logo .brake{
+
+.nav-logo .brake {
     width: 1.5px;
     height: 3em;
     background-color: rgb(30, 40, 45);
-    margin: 0 15px; /* Space on both sides of the divider */
+    margin: 0 15px;
 }
-.nav-logo a img#RiotGames{
+
+.nav-logo a img#RiotGames {
     height: 1em;
     width: auto;
 }
-@media screen and (min-width:901px){
-    .new-nav .bottom-nav .topic#h5{
-        position: relative;
-        padding: 15px 12%;
-    }
-}
-.top-nav .Netflix a img#Net{
+
+.top-nav .Netflix a img#Net {
     height: 1em;
     width: auto;
 }
-.top-nav .Netflix{
+
+.top-nav .Netflix {
     position: absolute;
     right: 5%;
     top: 15px;
+}
+
+@media screen and (min-width: 901px) {
+    .new-nav .bottom-nav .topic#h5 {
+        position: relative;
+        padding: 15px 12%;
+    }
+    
+    .H-Menu {
+        display: none; 
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .H-Menu {
+        display: block; 
+    }
+    
+    .bottom-nav {
+        display: none; 
+    }
+    
+    .nav-spacer {
+        height: 5em; 
+    }
+    
+    .top-nav .Netflix {
+        display: none; 
+    }
+    
+    .nav-logo a img#RiotGames {
+        display: none; 
+    }
+    
+    .nav-logo .brake {
+        display: none; 
+    }
+    
+    .nav-logo {
+        justify-content: center;
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .nav-logo a img#Arcane {
+        height: 2.5em; 
+    }
+
+    .top-nav{
+        border-bottom: rgb(120, 90, 40) solid 1.5px;
+    }
+}
+
+
+
+/* front cover */
+.BG-img{
+    margin-top: -25px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://d2w9rnfcy7mm78.cloudfront.net/35690531/original_4b4c2a1cec744fc75009bbbdae46d97e.png?1743548969?bc=0');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+.front-cover{
+    padding-top: 25px !important;
 }
