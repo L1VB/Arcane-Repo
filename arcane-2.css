@@ -770,3 +770,12 @@ a:hover {
         height: 60vh;
     }
 }
+
+/* footer */
+footer .content{
+    position: relative;
+}
+footer .content .images-footer img{
+    width: 3em;
+    height: auto;
+}
