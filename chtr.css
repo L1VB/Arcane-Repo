@@ -230,6 +230,10 @@ body {
 .bottom-nav .topic a span{
     color: rgb(91, 90, 86);
 }
+.bottom-nav .topic a span:hover{
+    text-decoration: underline;
+    color: rgb(91, 90, 86);
+}
 a {
     text-decoration: none;
     color: rgb(240, 230, 210);
@@ -244,7 +248,7 @@ a:hover{
     margin-top: 10px;
     position: relative;
 }
-.nav-logo img#Arcane{
+.nav-logo a img#Arcane{
     height: 1.5em;
     width: auto;
 }
@@ -254,17 +258,17 @@ a:hover{
     background-color: rgb(30, 40, 45);
     margin: 0 15px; /* Space on both sides of the divider */
 }
-.nav-logo img#RiotGames{
+.nav-logo a img#RiotGames{
     height: 1em;
     width: auto;
 }
 @media screen and (min-width:901px){
-    .new-nav .bottom-nav .topic#medium-body{
+    .new-nav .bottom-nav .topic#h5{
         position: relative;
         padding: 15px 12%;
     }
 }
-.top-nav .Netflix img#Net{
+.top-nav .Netflix a img#Net{
     height: 1em;
     width: auto;
 }
