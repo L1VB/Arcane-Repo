@@ -91,13 +91,13 @@ body {
 
 /* text */
 .title{
-    color: #fff2e0;
+    color: rgb(240, 230, 210);
 }
 .topic{
-    color: #aa7645;
+    color: rgb(200, 155, 60);
 }
 .des{
-    color: #999186;
+    color: rgb(160, 155, 140);
 }
 #h1{
     padding-bottom: 20px;
@@ -105,62 +105,6 @@ body {
 }
 #h2, #h3, #h4, #h5 {
     padding-bottom: 5px;
-}
-
-/* header */
-a{
-    text-decoration: none;
-    color: #aa7645
-}
-nav{
-    width: 1140px;
-    max-width: 80%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    z-index: 100;
-    left: 5%;
-    top: 5px;
-}
-nav a {
-    margin-right: clamp(20px, 2vw, 60px);
-}
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;  
-    position: absolute;
-    top: 15px;
-    z-index: 1300;
-}
-.logo img {
-    width: auto;
-    height: clamp(53px, 10vw, 8em);
-}
-.social-media a#riotGames img{
-    width: auto;
-    height: clamp(30px, 2vh, 8em) !important;
-}
-.social-media{
-    width: 1140px;
-    max-width: 80%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    z-index: 100;
-    right: 5%; 
-    justify-content: flex-end; 
-    top: 15px;
-}
-.social-media a{
-    margin-left: clamp(25px, 2vw, 60px);
-}
-.social-media a img{
-    width: 30px;
-    height: auto;
 }
 
 /* Reset styles */
@@ -225,13 +169,102 @@ nav a {
     }
 }
 
+/* smol images */
+.topic-row {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: 10px;
+    width: 100%; 
+}
+
+.topic-row img {
+    height: 25px;
+    width: auto;
+    margin: 0 5px; 
+}
+
+.topic-row .topic {
+    position: relative !important;
+}
+
+/* Center the title that follows the topic-row */
+.topic-row + .title {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px; 
+}
+
+.spotify-embed {
+    border-radius: 12px;
+    overflow: hidden;
+    width: 50vw;
+}
+.spotify-embed iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
 
 
-
-
-/* header */
-a{
+/* new nav */
+.new-nav{
+    top: 15px;
+    width: 100vw;
+}
+.top-nav{
+    border-bottom: rgb(240, 230, 210) solid 2px;
+    height: 5em;
+}
+.bottom-nav{
+    border-bottom: rgb(240, 230, 210) solid 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.new-nav .bottom-nav .topic#h4{
+    position: relative;
+    padding: 15px 10%;
+}
+.bottom-nav .topic a span{
+    color: rgb(120, 90, 40);
+}
+a {
     text-decoration: none;
-    color: rgb(240, 230, 210);
+    color: rgb(200, 155, 60);
+}
+a:hover{
     text-decoration: underline;
+}
+.nav-logo{
+    position: absolute;
+    left: 5%;
+    top: 20px !important;
+}
+.nav-logo img{
+    width: auto;
+}
+.nav-logo img#Arcane{
+    padding-right: 30px;
+    height: 2.5em;
+}
+.nav-logo img#RiotGames{
+    padding-left: 30px;
+    height: 2em;
+    border-left: rgb(240, 230, 210) solid 2px;
+}
+@media screen and (min-width:901px){
+    .new-nav .bottom-nav .topic#h4{
+        position: relative;
+        padding: 15px 12%;
+    }
+}
+.top-nav .Netflix img#Net{
+    height: 2em;
+    width: auto;
+}
+.top-nav .Netflix{
+    position: absolute;
+    right: 5%;
+    top: 25px;
 }
