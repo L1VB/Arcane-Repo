@@ -85,10 +85,80 @@ document.addEventListener('DOMContentLoaded', function() {
     nextButton.addEventListener('click', moveToBack);
     prevButton.addEventListener('click', moveToFront);
     
+    // New function to move a specific video to the front
+    function moveVideoToFront(index) {
+        // Only proceed if screen width is 1001px or larger
+        if (window.innerWidth >= 1001) {
+            // If clicking the first video (main video), simply move to next video
+            if (index === 0) {
+                moveToBack();
+                return;
+            }
+            
+            // Disable buttons during animation
+            prevButton.disabled = true;
+            nextButton.disabled = true;
+            
+            // Get the selected video
+            const selectedVideo = videos[index];
+            
+            // Add animation class to all videos
+            videos.forEach(video => {
+                video.style.transform = 'translateX(100%)';
+            });
+            
+            // After animation completes, rearrange the DOM
+            setTimeout(() => {
+                // Reset transform
+                videos.forEach(video => {
+                    video.style.transform = '';
+                });
+                
+                // Remove the selected video from the array
+                videos.splice(index, 1);
+                // Add it to the front
+                videos.unshift(selectedVideo);
+                
+                // Update the DOM to reflect the new order
+                videos.forEach(video => {
+                    slide.appendChild(video);
+                });
+                
+                // Re-enable buttons
+                prevButton.disabled = false;
+                nextButton.disabled = false;
+            }, 600); // Match the transition duration in CSS
+        }
+    }
+    
+    // Add click event listeners to all videos (for screen width >= 1001px)
+    videos.forEach((video, index) => {
+        video.addEventListener('click', () => {
+            moveVideoToFront(index);
+        });
+    });
+    
     // Initialize videos array to match DOM order
     videos.sort((a, b) => {
         return Array.from(slide.children).indexOf(a) - Array.from(slide.children).indexOf(b);
     });
+    
+    // Check screen width on load and resize to show/hide buttons
+    function adjustForScreenSize() {
+        if (window.innerWidth <= 1000) {
+            prevButton.style.display = 'flex';
+            nextButton.style.display = 'flex';
+        } else {
+            prevButton.style.display = 'none';
+            nextButton.style.display = 'none';
+        }
+    }
+    
+    // Run on page load
+    adjustForScreenSize();
+    
+    // Run on window resize
+    window.addEventListener('resize', adjustForScreenSize);
     
     // Original loading screen functionality (kept from your code)
     const segments = document.querySelectorAll('.loading-segment');
