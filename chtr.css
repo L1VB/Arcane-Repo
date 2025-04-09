@@ -209,62 +209,67 @@ body {
 
 /* new nav */
 .new-nav{
-    top: 15px;
     width: 100vw;
+    padding-bottom: 25px;
 }
 .top-nav{
-    border-bottom: rgb(240, 230, 210) solid 2px;
-    height: 5em;
+    border-bottom: rgb(30, 40, 45) solid 1.5px;
+    height: 3em;
+    position: relative; /* Added for proper positioning */
 }
 .bottom-nav{
-    border-bottom: rgb(240, 230, 210) solid 2px;
+    border-bottom: rgb(120, 90, 40) solid 1.5px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.new-nav .bottom-nav .topic#h4{
+.new-nav .bottom-nav .topic#h5{
     position: relative;
-    padding: 15px 10%;
+    padding: 5px 10%;
 }
 .bottom-nav .topic a span{
-    color: rgb(120, 90, 40);
+    color: rgb(91, 90, 86);
 }
 a {
     text-decoration: none;
-    color: rgb(200, 155, 60);
+    color: rgb(240, 230, 210);
 }
 a:hover{
     text-decoration: underline;
 }
-.nav-logo{
-    position: absolute;
-    left: 5%;
-    top: 20px !important;
-}
-.nav-logo img{
-    width: auto;
+.nav-logo {
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+    margin-top: 10px;
+    position: relative;
 }
 .nav-logo img#Arcane{
-    padding-right: 30px;
-    height: 2.5em;
+    height: 1.5em;
+    width: auto;
+}
+.nav-logo .brake{
+    width: 1.5px;
+    height: 3em;
+    background-color: rgb(30, 40, 45);
+    margin: 0 15px; /* Space on both sides of the divider */
 }
 .nav-logo img#RiotGames{
-    padding-left: 30px;
-    height: 2em;
-    border-left: rgb(240, 230, 210) solid 2px;
+    height: 1em;
+    width: auto;
 }
 @media screen and (min-width:901px){
-    .new-nav .bottom-nav .topic#h4{
+    .new-nav .bottom-nav .topic#medium-body{
         position: relative;
         padding: 15px 12%;
     }
 }
 .top-nav .Netflix img#Net{
-    height: 2em;
+    height: 1em;
     width: auto;
 }
 .top-nav .Netflix{
     position: absolute;
     right: 5%;
-    top: 25px;
+    top: 15px;
 }
