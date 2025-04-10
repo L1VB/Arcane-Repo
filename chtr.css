@@ -144,7 +144,7 @@ body {
     display: block;
     margin: 8px 0;
     text-decoration: none;
-    color: rgb(240, 230, 210);
+    color: rgb(120, 90, 40);
     padding-bottom: 0.5em;
 }
 .H-M-Content a:hover{
@@ -155,6 +155,24 @@ body {
     height: 2em;
     width: auto;
     padding-bottom: 0.5em;
+}
+
+.H-M-Content a:hover {
+    text-decoration: underline;
+}
+
+.H-M-Content a img {
+    height: 2em;
+    width: auto;
+    padding-bottom: 0.5em;
+}
+
+a span{
+    color: rgb(200, 155, 60) !important;
+}
+a span:hover{
+    color: rgb(200, 155, 60);
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 900px) {
@@ -186,78 +204,6 @@ body {
 
 .topic-row .topic {
     position: relative !important;
-}
-
-/* Center the title that follows the topic-row */
-.topic-row + .title {
-    text-align: center;
-    width: 100%;
-    margin-top: 10px; 
-}
-
-.spotify-embed {
-    border-radius: 12px;
-    overflow: hidden;
-    width: 50vw;
-}
-.spotify-embed iframe {
-    width: 100%;
-    height: 500px;
-    border: none;
-}
-
--------------------
-/* hamburger menu styles */
-.H-Menu {
-    position: fixed;
-    top: 10px;
-    right: 5%;
-    z-index: 9999;
-    display: none;
-}
-
-.H-Menu img {
-    width: 2em;
-    cursor: pointer;
-    z-index: 9900;
-}
-
-.H-M-Content {
-    display: none;
-    position: absolute;
-    right: -5vw;
-    top: -10px;
-    background-color: rgb(1, 10, 19);
-    min-width: 13em;
-    padding: 30px 30px;
-    height: 100vh;
-    z-index: 9000;
-}
-
-.H-M-Content a {
-    display: block;
-    margin: 8px 0;
-    text-decoration: none;
-    color: rgb(120, 90, 40);
-    padding-bottom: 0.5em;
-}
-
-.H-M-Content a:hover {
-    text-decoration: underline;
-}
-
-.H-M-Content a img {
-    height: 2em;
-    width: auto;
-    padding-bottom: 0.5em;
-}
-
-a span{
-    color: rgb(200, 155, 60) !important;
-}
-a span:hover{
-    color: rgb(200, 155, 60);
-    text-decoration: underline;
 }
 
 /* new nav */
@@ -402,19 +348,104 @@ a:hover {
     }
 }
 
+/* footer */
+footer {
+    width: 100vw;
+    height: 10vh;
+    position: relative;
+    margin-top: 20px;
+    background-color: rgb(1, 10, 19);
+    border-top: 1px solid rgb(200, 155, 60);
+    padding: 20px 0;
+    z-index: 10;
+}
+
+footer .content {
+    position: relative;
+    display: flex;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+footer .content .des{
+    width: 100%;
+    position: relative;
+    color: rgb(240, 230, 210);
+}
+
+footer .content .des#show-des{
+    width: 100%;
+    position: relative;
+    color: rgb(240, 230, 210);
+    display: none;
+}
+
+footer .links {
+    padding: 15px 0;
+    width: 100%;
+    position: relative;
+    display: none;
+    font-size: 15px !important;
+}
+
+footer .links a{
+    padding: 0 10px;
+}
+
+footer .images-footer {
+    display: none;
+    padding: 10px;
+}
+
+footer .images-footer img{
+    height: 1.5em;
+    width: auto;
+}
+
+/* Ensure footer is visible at all screen sizes */
+@media screen and (max-width: 900px) {
+    footer .links,
+    footer .images-footer,
+    footer .content .des#show-des{
+        display: inline-block;
+    }
+    footer .content .des{
+        display: none;
+    }
+}
 
 
 /* front cover */
-.BG-img{
-    margin-top: -25px;
-    left: 0;
+.front-cover {
+    height: 85.5vh !important;
     width: 100vw;
-    height: 100vh;
-    background-image: url('https://d2w9rnfcy7mm78.cloudfront.net/35690531/original_4b4c2a1cec744fc75009bbbdae46d97e.png?1743548969?bc=0');
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
+    margin: 0;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.front-cover{
-    padding-top: 25px !important;
+@media screen and (min-width:901px){
+    .front-cover{
+        height: 80vh !important;
+    }
+}
+.BG-img{
+    background-image: url('https://d2w9rnfcy7mm78.cloudfront.net/35690513/original_7a6126b4915806b6fed3622263c4ea5b.png?1743548958?bc=0');
+    background-color: rgba(1, 10, 19, 0.687); 
+    background-blend-mode: overlay;
+    z-index: -10;
+    height: 100vh;
+    width: 100vw;
+}
+.front-cover .content {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
