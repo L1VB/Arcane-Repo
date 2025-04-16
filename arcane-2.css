@@ -409,6 +409,7 @@ a:hover {
     box-sizing: border-box;
 }
 
+
 /* Common Styles for Full-Screen Sections */
 .front-cover, .about, .characters {
     position: relative;
@@ -482,6 +483,7 @@ a:hover {
     height: 60vh;
     margin: 0;
     z-index: 1;
+    background-color: rgb(1, 10, 19);
 }
 .about .content#about-section .title {
     position: absolute;
@@ -503,12 +505,7 @@ a:hover {
     top: 50%;
     transform: translateY(-50%);
 }
-.about-BG-img {
-    background-image: url('https://d2w9rnfcy7mm78.cloudfront.net/35690513/original_7a6126b4915806b6fed3622263c4ea5b.png?1743548958?bc=0');
-    background-color: rgba(1, 10, 19, 0.687); 
-    background-blend-mode: overlay;
-    z-index: -10;
-}
+
 @media screen and (max-width: 1300px){
     .about{
         height: 40vh;
