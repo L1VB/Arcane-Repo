@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let activeSlide = {
       img: activeSlideContainer.querySelector('img').src,
       alt: activeSlideContainer.querySelector('img').alt,
-      topic: "Active Slide",
+      topic: activeSlideContainer.querySelector('.topic').textContent.trim(),
       desc: activeSlideContainer.querySelector('.des').textContent.trim()
     };
     
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
       slide.addEventListener('click', function() {
         const clickedImg = this.dataset.img;
         const clickedAlt = this.dataset.alt;
-        const clickedTopic = this.dataset.topic || "Click here for more";
+        const clickedTopic = this.dataset.topic;
         const clickedDesc = this.dataset.desc;
         
         activeSlideContainer.classList.add('fade-out');
@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
           activeSlideContainer.innerHTML = `
             <div class="active-slide">
               <img src="${clickedImg}" alt="${clickedAlt}">
+              <div class="topic" id="h4">${clickedTopic}</div>
               <div class="des" id="medium-body">
                 ${clickedDesc}
               </div>
@@ -109,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
       slide.addEventListener('click', function() {
         const clickedImg = this.dataset.img;
         const clickedAlt = this.dataset.alt;
-        const clickedTopic = this.dataset.topic || "Click here for more";
+        const clickedTopic = this.dataset.topic;
         const clickedDesc = this.dataset.desc;
         
         activeSlideContainer.classList.add('fade-out');
@@ -125,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
           activeSlideContainer.innerHTML = `
             <div class="active-slide">
               <img src="${clickedImg}" alt="${clickedAlt}">
+              <div class="topic" id="h4">${clickedTopic}</div>
               <div class="des" id="medium-body">
                 ${clickedDesc}
               </div>
