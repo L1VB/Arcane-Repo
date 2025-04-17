@@ -206,6 +206,12 @@ a span:hover{
     position: relative !important;
 }
 
+.topic-row + .title {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px; 
+}
+
 /* new nav */
 .new-nav {
     width: 100%;
@@ -498,16 +504,6 @@ footer .images-footer img{
     width: 100vw;
     padding: 0;
     position: relative;
-    overflow: hidden;
-}
-  
-.story .BG-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
 }
   
 .story .content {
@@ -554,17 +550,17 @@ footer .images-footer img{
   
 .carousel .nav-btn {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 1.5em;
+    color: rgb(240, 230, 210);
+    border: 1px rgb(200, 155, 60) solid;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 18px;
 }
   
 .carousel .prev-btn {
@@ -579,6 +575,9 @@ footer .images-footer img{
     width: 60%;
     padding: 0 2em;
     transition: opacity 0.5s ease;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
   
 .carousel .active-slide-container .active-slide {
@@ -655,7 +654,6 @@ footer .images-footer img{
     margin-bottom: 0.2em;
     font-size: 0.9em;
     white-space: nowrap;
-    overflow: hidden;
     text-overflow: ellipsis;
 }
   
@@ -667,7 +665,12 @@ footer .images-footer img{
 .carousel .slides-column .slide .des#medium-body {
     display: none;
 }
-  
+
+.story .content .carousel #h4{
+    padding-top: 15px;
+    margin-bottom: -15px !important;
+}
+
 .fade-in {
     animation: fadeIn 0.5s ease forwards;
 }
@@ -699,22 +702,17 @@ footer .images-footer img{
     
     .carousel {
       flex-direction: column;
-      height: 62vh;
+      height: 100%;
     }
     
     .carousel .active-slide-container {
-      width: 90%;
-      padding: 0;
-      margin: 0 5%; 
-      margin-bottom: 2em;
+      width: 85%;
+      margin-left: 50%;
+      transform: translateX(-50%);
     }
     
     .carousel .slides-column {
-      width: 100%;
-      padding: 0;
-      flex-direction: row;
-      overflow-x: hidden; 
-      position: relative;
+      display: none;
     }
     
     .carousel .nav-buttons {
@@ -724,7 +722,6 @@ footer .images-footer img{
     .carousel .slides-column .slide {
       min-width: 250px;
       margin: 0 10px;
-      overflow: visible;
     }
     
     .carousel .slides-column .slide:hover {
