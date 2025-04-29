@@ -448,7 +448,7 @@ a span:hover{
 
 /* front-cover */
 .front-cover{
-    height: 75vh !important;
+    height: 10vh !important;
     width: 100vw;
     margin: 0;
     z-index: 1;
@@ -463,4 +463,19 @@ a span:hover{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+/* image table */
+.image-table{
+    padding-top: 50px;
+    position: relative;
+}
+.image-table .box{
+    display:flex ;
+    overflow: hidden;
+}
+
+.image-table .box img{
+    width: 30em;
+    height: auto;
 }

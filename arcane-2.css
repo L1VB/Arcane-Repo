@@ -536,13 +536,22 @@ a:hover {
 }
 .music#music-img{
     background-image: url('https://d2w9rnfcy7mm78.cloudfront.net/35776200/original_69c1cf4e18a0238c838cd0601e71ce3e.png?1743811557?bc=0');
-    background-color: rgba(1, 10, 19, 0.687);  
+    background-color: rgba(1, 10, 19, 0.353);  
     z-index: -10;
     height: 100%;
     background-size: cover;
     background-position: center;
     position: relative;
     background-blend-mode: overlay;
+}
+@media screen and (max-width: 1000px){
+    .music#music-img{
+        height: 95vh;
+    }
+    .music .content .des{
+        margin-bottom: -20px !important;
+    }
+    
 }
 .music .content {
     position: absolute;
@@ -734,6 +743,9 @@ a:hover {
     }
     .showcase-BG-img{
         height: 100vh;
+    }
+    .showcase .content .des{
+        display: none;
     }
 }
 
