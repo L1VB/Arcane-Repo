@@ -428,6 +428,7 @@ footer .images-footer img{
     transform: translateX(-50%);
     position: relative;
     top: 70px;
+    z-index: 5;
 }
 @media screen and (max-width:900px){
     .line-break{
@@ -467,15 +468,21 @@ a span:hover{
 
 /* image table */
 .image-table{
-    padding-top: 50px;
+    margin-top: 70px;
     position: relative;
+    height: 190vh !important;
+    width: 100%;
+    background-color: rebeccapurple;
 }
 .image-table .box{
-    display:flex ;
-    overflow: hidden;
+    flex-wrap: wrap;
 }
 
 .image-table .box img{
-    width: 30em;
+    width: auto;
+    height: 10em;
+}
+.image-table .box img#tall{
     height: auto;
+    width: 5em;
 }
