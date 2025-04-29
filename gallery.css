@@ -443,3 +443,24 @@ a span:hover{
     color: rgb(200, 155, 60);
     text-decoration: underline;
 }
+
+
+
+/* front-cover */
+.front-cover{
+    height: 75vh !important;
+    width: 100vw;
+    margin: 0;
+    z-index: 1;
+    position: relative;
+    display: flex;
+}
+.front-cover .content{
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
