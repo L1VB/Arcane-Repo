@@ -736,35 +736,31 @@ footer .images-footer img{
     height: 100%;
     width: 100vw;
     position: relative;
-    background-color: rgba(144, 222, 222, 0.362);
 }
 .creation .content{
-    margin: 50px 5%;
+    margin: 80px 5%;
 }
 .creation .content .create-img img{
     height: 30em;
     width: auto;
-}
-.creation .content .des{
-    color: rgb(30, 40, 45) !important;
 }
 
 /* Grid layout for character slides */
 .chtr-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 20px;
     width: 100%;
-    background-color: rebeccapurple;
 }
 
 /* Individual character slide styling */
 .chtr .slide {
-    background-color: antiquewhite;
     width: 30em;
     height: auto;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     transition: transform 0.3s ease;
 }
 
@@ -776,9 +772,16 @@ footer .images-footer img{
     height: auto;
     width: 30em;
     overflow: hidden;
+    padding-bottom: 10px;
 }
 
 .chtr .slide .des {
-    padding-left: 20px;
+    padding-left: 25px;
     width: 100%;
+    align-self: flex-start;
+}
+
+.chtr .slide .topic {
+    width: 100%;
+    text-align: center;
 }
