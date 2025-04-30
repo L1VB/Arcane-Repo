@@ -734,34 +734,38 @@ footer .images-footer img{
 /* character creation */
 .creation{
     height: 100%;
-    width: 100vw;
+    width: 100%;
     position: relative;
 }
+
 .creation .content{
     margin: 80px 5%;
 }
+
 .creation .content .create-img img{
     height: 30em;
     width: auto;
 }
 
-/* Grid layout for character slides */
 .chtr-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 20px;
     width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
-/* Individual character slide styling */
 .chtr .slide {
-    width: 30em;
+    width: 100%;
+    max-width: 30em;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     transition: transform 0.3s ease;
+    margin: 0 auto;
 }
 
 .chtr .slide:hover {
@@ -770,7 +774,8 @@ footer .images-footer img{
 
 .chtr .slide img {
     height: auto;
-    width: 30em;
+    width: 100%;
+    max-width: 30em;
     overflow: hidden;
     padding-bottom: 10px;
 }
@@ -784,4 +789,60 @@ footer .images-footer img{
 .chtr .slide .topic {
     width: 100%;
     text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+    .chtr-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .chtr-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+}
+
+
+/* Location */
+.location{
+    height: 100%;
+}
+
+.location .content .carousel{
+    margin: 10px 0;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.location .carousel .slide{
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.location .carousel .slide .image-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.location .carousel .slide .secondary-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.location .carousel .slide img{
+    width: auto;
+    height: calc(10em - 5px);
+    object-fit: cover;
+}
+
+.location .carousel .slide img#location-1{
+    width: auto;
+    height: 20em;
 }
