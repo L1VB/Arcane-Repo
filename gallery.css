@@ -481,21 +481,15 @@ a span:hover{
 
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
     grid-auto-rows: 200px; 
     gap: 15px;
-    max-width: 1200px;
     width: 100%;
 }
 
 .image-item {
     overflow: hidden;
-    border-radius: 4px;
-    transition: transform 0.3s ease;
-}
-
-.image-item:hover {
-    transform: scale(1.02);
+    border-radius: 3px;
 }
 
 .image-item img {
@@ -506,21 +500,6 @@ a span:hover{
     object-position: center;
 }
 
-/* Width variations only */
 .width-1 { grid-column-end: span 1; }
 .width-2 { grid-column-end: span 2; }
 .width-3 { grid-column-end: span 3; }
-
-@media (max-width: 768px) {
-    .image-grid {
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    }
-    .width-3 { grid-column-end: span 2; }
-}
-
-@media (max-width: 480px) {
-    .image-grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    }
-    .width-2, .width-3 { grid-column-end: span 1; }
-}
