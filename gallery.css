@@ -460,6 +460,12 @@ a span:hover{
 .front-cover .content .topic{
     text-align: center;
 }
+@media screen and (max-width:1228px){
+    .front-cover .content .des{
+        display: none;
+    }
+    
+}
 
 /* image table */
 .image-table {
