@@ -423,18 +423,11 @@ footer .images-footer img{
 .line-break{
     border-top: rgb(200, 155, 60) solid 1px;
     width: 90%;
-    padding-bottom: 25px;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    margin: 0 auto;
     position: relative;
-    top: 70px;
     z-index: 5;
 }
-@media screen and (max-width:900px){
-    .line-break{
-        margin-top: 70px;
-    }
-}
+
 
 /* span */
 a span{
@@ -445,16 +438,15 @@ a span:hover{
     text-decoration: underline;
 }
 
-
-
 /* front-cover */
 .front-cover{
-    height: 10vh !important;
+    height: 15vh !important;
     width: 100vw;
     margin: 0;
     z-index: 1;
     position: relative;
     display: flex;
+    margin-bottom: 35px;
 }
 .front-cover .content{
     position: absolute;
@@ -465,14 +457,15 @@ a span:hover{
     align-items: center;
     flex-direction: column;
 }
+.front-cover .content .topic{
+    text-align: center;
+}
 
 /* image table */
 .image-table {
-    margin-top: 40px;
     position: relative;
     width: 100%;
-    height: 150vh;
-    background-color: rebeccapurple;
+    height: 100%;
     padding: 30px 5%;
     box-sizing: border-box;
     display: flex;
@@ -483,13 +476,17 @@ a span:hover{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
     grid-auto-rows: 200px; 
-    gap: 15px;
+    gap: 10px;
     width: 100%;
 }
 
 .image-item {
     overflow: hidden;
     border-radius: 3px;
+}
+
+.image-item:hover {
+    transform: scale(1.02);
 }
 
 .image-item img {
