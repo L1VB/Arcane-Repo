@@ -488,6 +488,24 @@ footer .content .des#show-des {
     }
 }
 
+/* down arrow */
+.down-arrow img{
+    width: auto;
+    height: 1.9em;
+    position: fixed;
+    right: 3em;
+    z-index: 800; 
+    background-color: rgba(91, 90, 86, 0);
+    padding: 7px;
+    border-radius: 30px;
+}
+.down-arrow img:hover{
+    display: none;
+}
+.down-arrow#arrow-hide{
+    z-index: 700;
+}
+
 /* story */
 .story {
     height: 80vh;
@@ -497,7 +515,7 @@ footer .content .des#show-des {
 }
 
 .story .content {
-    padding-top: 4em;
+    padding-top: 3em;
     width: 100%;
     height: 100%;
 }
@@ -605,7 +623,7 @@ footer .content .des#show-des {
     transition: transform 0.3s ease;
     border-radius: 8px;
     overflow: visible;
-    height: 6.5em;
+    height: 6em;
 }
 
 .carousel .slides-column .slide .slide-overlay {
