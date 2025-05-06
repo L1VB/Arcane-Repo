@@ -493,7 +493,7 @@ a:hover {
 .about .content#about-section .des{
     position: absolute;
     right: 5%;
-    top: calc(50px + 80px + var(--title-height, 0px)); /* cal function calculates the distance needed to make the 'des' away from the 'title' */
+    top: calc(50px + 80px + var(--title-height, 0px)); 
     max-width: 25%;
     width: 100vw;
     text-align: right;
@@ -536,7 +536,7 @@ a:hover {
 }
 .music#music-img{
     background-image: url('https://d2w9rnfcy7mm78.cloudfront.net/35776200/original_69c1cf4e18a0238c838cd0601e71ce3e.png?1743811557?bc=0');
-    background-color: rgba(1, 10, 19, 0.353);  
+    background-color: rgba(1, 10, 19, 0.58);  
     z-index: -10;
     height: 100%;
     background-size: cover;
@@ -562,8 +562,20 @@ a:hover {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index: 2; 
+    pointer-events: none;
 }
 
+.music .content * {
+    pointer-events: auto; 
+}
+
+/* spotify */
+.spotify{
+    position: relative;
+    margin-top: -29em;
+    margin-left: 25%;
+}
 
 /* smol images */
 .topic-row {
@@ -590,18 +602,6 @@ a:hover {
     margin-top: 10px; 
 }
 
-/* spotify */
-.spotify-embed {
-    overflow: hidden;
-    width: 50vw;
-    padding-top: 40px;
-}
-.spotify-embed iframe {
-    width: 100%;
-    height: 450px;
-    border: none;
-    margin: 0 auto;
-}
 
 
 
@@ -673,7 +673,7 @@ a:hover {
     margin-bottom: 5px;
     flex-basis: 100%;
     transition: all 0.6s ease-in-out;
-    cursor: pointer; /* Add pointer cursor to main video */
+    cursor: pointer;
 }
  
 .slide video:not(:nth-child(1)) {
@@ -682,7 +682,7 @@ a:hover {
     z-index: 120;
     margin: 0 5px;
     transition: all 0.6s ease-in-out;
-    cursor: pointer; /* Add pointer cursor to indicate clickability */
+    cursor: pointer; 
 }
  
 .slide video:nth-child(n+5) {
