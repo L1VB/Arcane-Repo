@@ -361,7 +361,7 @@ footer {
     max-height: 10vh !important;
     overflow: hidden;
     position: relative;
-    margin-top: 20px;
+    margin-top: -70px;
     background-color: rgb(1, 10, 19);
     border-top: 1px solid rgb(200, 155, 60);
     padding: 0;
@@ -489,22 +489,26 @@ footer .content .des#show-des {
 }
 
 /* down arrow */
-.down-arrow img{
-    width: auto;
-    height: 1.9em;
+.down-arrow {
     position: fixed;
     right: 3em;
-    z-index: 800; 
+    bottom: 3em;
+    z-index: 800;
+    cursor: pointer;
+}
+
+.down-arrow img {
+    width: auto;
+    height: 1.5em;
     background-color: rgba(91, 90, 86, 0);
     padding: 7px;
+    border: 10px solid transparent;
     border-radius: 30px;
+    box-sizing: content-box;
+    transition: transform 0.5s ease, opacity 0.3s ease;
 }
-.down-arrow img:hover{
-    display: none;
-}
-.down-arrow#arrow-hide{
-    z-index: 700;
-}
+
+ 
 
 /* story */
 .story {
@@ -515,7 +519,7 @@ footer .content .des#show-des {
 }
 
 .story .content {
-    padding-top: 3em;
+    padding-top: 4em;
     width: 100%;
     height: 100%;
 }
@@ -700,7 +704,7 @@ footer .content .des#show-des {
 
 @media screen and (max-width: 900px) {
     .story {
-      margin-top: 40px;
+      margin-top: 1em;
       height: 85vh;
     }
 
@@ -813,44 +817,72 @@ footer .content .des#show-des {
 
 
 /* Location */
-.location{
+.location {
     height: 100%;
+    margin: 0;
 }
 
-.location .content .carousel{
-    margin: 10px 0;
-    width: 90%;
+.location .content .carousel {
+    margin: 0;
+    padding: 0;
+    width: 100% !important;
+    height: auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
-.location .carousel .slide{
+.location .carousel .slide {
     width: 100%;
-    padding: 15px;
-    box-sizing: border-box;
+    padding: 0;
 }
 
+/* image sizings */
 .location .carousel .slide .image-row {
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    margin-top: 10px;
+    margin-bottom: 50px;
+    position: relative;
 }
 
 .location .carousel .slide .secondary-images {
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-
-.location .carousel .slide img{
-    width: auto;
+    width: 100%;
     height: calc(10em - 5px);
     object-fit: cover;
 }
 
-.location .carousel .slide img#location-1{
-    width: auto;
+.location .carousel .slide .secondary-images img {
+    width: 100%;
+    height: calc(10em - 5px); 
+    object-fit: cover;
+}
+
+.location .carousel .slide img#location-1 {
+    width: 100%;
     height: 20em;
+    object-fit: cover;
+}
+
+.location .carousel .slide .big-img {
+    width: 60% !important;
+    height: 20em;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 1114px) {
+    .location .carousel .slide .secondary-images {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        height: 20em;
+        object-fit: cover;
+    }
+
+    .location .carousel .slide .secondary-images img {
+        object-fit: cover;
+    }
 }
