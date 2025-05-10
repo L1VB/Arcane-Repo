@@ -749,6 +749,7 @@ a:hover {
     }
 }
 
+
 /* footer */
 footer {
     width: 100vw;
@@ -769,41 +770,43 @@ footer {
 footer .content {
     position: relative;
     display: flex;
-    margin-right: 5%;
-    margin-left: 5%;
+    width: 90%;
     height: 100%; 
     align-items: center; 
     overflow: hidden;
+    margin-left: 5%;
 }
 
 footer .content .des {
     width: 100%;
     position: relative;
-    color: rgb(240, 230, 210);
+    padding-right: 15px;
+    padding-left: 5%;
 }
 
-footer .content .des#show-des {
+footer .content .des#show {
     width: 100%;
     position: relative;
-    color: rgb(240, 230, 210);
     display: none;
 }
 
-footer .feedback .des a{
+.feedback .des a{
     color: rgb(240, 230, 210) !important;
+    padding: 0;
+    text-decoration: underline;
 }
 
-footer .feedback .des a:hover{
-    color: rgb(200, 155, 60);
+.feedback .des a:hover{
+    color: rgb(200, 155, 60) !important;
     cursor: pointer;
 }
 
-@media screen and (max-width: 900px) {
-    footer .content .des#show-des {
-        display: inline-block;
-    }
-    footer .content .des {
+@media screen and (max-width: 1038px) {
+    footer .content .des#hide {
         display: none;
+    }
+    footer .content .des#show{
+        display: inline-block;
     }
     
     footer {

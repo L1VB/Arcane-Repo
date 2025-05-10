@@ -354,14 +354,14 @@ a:hover {
     }
 }
 
-/* Updated footer styles */
+/* footer */
 footer {
     width: 100vw;
     height: 10vh !important;
     max-height: 10vh !important;
     overflow: hidden;
     position: relative;
-    margin-top: -70px;
+    margin-top: 20px;
     background-color: rgb(1, 10, 19);
     border-top: 1px solid rgb(200, 155, 60);
     padding: 0;
@@ -374,32 +374,43 @@ footer {
 footer .content {
     position: relative;
     display: flex;
-    margin-right: 5%;
-    margin-left: 5%;
+    width: 90%;
     height: 100%; 
     align-items: center; 
     overflow: hidden;
+    margin-left: 5%;
 }
 
 footer .content .des {
     width: 100%;
     position: relative;
-    color: rgb(240, 230, 210);
+    padding-right: 15px;
+    padding-left: 5%;
 }
 
-footer .content .des#show-des {
+footer .content .des#show {
     width: 100%;
     position: relative;
-    color: rgb(240, 230, 210);
     display: none;
 }
 
-@media screen and (max-width: 900px) {
-    footer .content .des#show-des {
-        display: inline-block;
-    }
-    footer .content .des {
+.feedback .des a{
+    color: rgb(240, 230, 210) !important;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.feedback .des a:hover{
+    color: rgb(200, 155, 60) !important;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1092px) {
+    footer .content .des#hide {
         display: none;
+    }
+    footer .content .des#show{
+        display: inline-block;
     }
     
     footer {
