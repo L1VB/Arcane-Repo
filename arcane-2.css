@@ -139,7 +139,7 @@ body {
 @media screen and (max-width: 1300px) {
     .loading-container::before {
         background-image: none;
-        background-color: rgba(1, 10, 19);
+        background-image: url('https://d2w9rnfcy7mm78.cloudfront.net/36578878/original_02967268bdda743199dc503a3b0ed3bc.webp?1746855004?bc=0s');
     }
 }
 
@@ -212,7 +212,7 @@ body {
     position: fixed;
     top: 10px;
     right: 5%;
-    z-index: 9999;
+    z-index: 9998;
     display: none;
 }
 
@@ -787,6 +787,15 @@ footer .content .des#show-des {
     position: relative;
     color: rgb(240, 230, 210);
     display: none;
+}
+
+footer .feedback .des a{
+    color: rgb(240, 230, 210) !important;
+}
+
+footer .feedback .des a:hover{
+    color: rgb(200, 155, 60);
+    cursor: pointer;
 }
 
 @media screen and (max-width: 900px) {

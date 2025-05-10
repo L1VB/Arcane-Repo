@@ -154,13 +154,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Run on page load
     adjustForScreenSize();
     
-    // Run on window resize
     window.addEventListener('resize', adjustForScreenSize);
     
-    // Original loading screen functionality (kept from your code)
     const segments = document.querySelectorAll('.loading-segment');
     const loadingScreen = document.getElementById('loadingScreen');
     const mainContent = document.getElementById('mainContent');
@@ -187,7 +184,9 @@ document.addEventListener('DOMContentLoaded', function() {
         typewriterEffect(0);
     }
 
-    // Toggle collapse functionality (kept from your code)
+
+    
+
     document.querySelectorAll('.toggle-collapse').forEach(button => {
         button.addEventListener('click', function() {
             const collapseContent = this.closest('.des').querySelector('.collapse-content');
@@ -195,7 +194,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Parallax effect functionality (kept from your code)
     var sections = document.querySelectorAll(".about-BG-img, .music#music-img");
     
     if (sections.length > 0) {
@@ -210,7 +208,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Hamburger menu functionality (kept from your code)
     const menuToggle = document.getElementById('menuToggle');
     const menuContent = document.getElementById('menuContent');
     
@@ -223,7 +220,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Close menu when clicking outside
         document.addEventListener('click', function(event) {
             if (!menuContent.contains(event.target) && event.target !== menuToggle) {
                 menuContent.style.display = 'none';
