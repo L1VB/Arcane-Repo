@@ -616,146 +616,111 @@ a:hover {
  
 /* Original showcase styles */
 .showcase {
-   height: 103vh !important;
-   width: 100vw;
-   margin: 0;
-   position: relative;
-   z-index: 1;
-}
-
-.showcase-BG-img {
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100vw;
-   height: 110vh;
-   background-image: url('https://d2w9rnfcy7mm78.cloudfront.net/35690513/original_7a6126b4915806b6fed3622263c4ea5b.png?1743548958?bc=0');
-   background-color: rgba(1, 10, 19, 0.8);
-   background-blend-mode: overlay;
-   background-size: cover;
-   background-position: center;
-   z-index: -1;
+    height: 95vh !important;
+    width: 100vw;
+    margin: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .showcase .content {
-   position: relative;
-   padding: 50px 0;
-   margin: 0 5%;
+    position: relative;
+    padding: 70px 0;
+    margin: 0 5%;
 }
 
-.showcase .content .des{
+.showcase .content .des {
     position: relative;
     text-align: center;
     padding-bottom: 15px;
 }
 
 @media screen and (max-width: 900px) {
-   .showcase {
-       height: 90vh !important;
-   }
+    .showcase {
+        height: 90vh !important;
+    }
 }
 
 /* Carousel */
-.carousel {
-    width: 100%;
-    height: 80vh;
-    z-index: 100;
+* {
+    box-sizing: border-box
+}
+.carousel .slide {
+    display: none
+}
+
+/* Add this to maintain aspect ratio and size for iframes */
+.iframe-container {
     position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
     overflow: hidden;
 }
- 
-.slide {
-    display: flex;
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    border: 0;
+}
+
+.carousel {
+    max-width: 1000px;
     position: relative;
-    flex-wrap: wrap;
-    overflow: hidden;
-    justify-content: center;
+    margin: auto;
 }
- 
-.slide video:nth-child(1) {
-    height: 55vh;
-    width: auto;
-    z-index: 130;
-    margin-bottom: 5px;
-    flex-basis: 100%;
-    transition: all 0.6s ease-in-out;
+
+/* Next & previous buttons */
+.prev, .next {
     cursor: pointer;
-}
- 
-.slide video:not(:nth-child(1)) {
-    height: 22vh;
+    position: absolute;
+    top: 50%;
     width: auto;
-    z-index: 120;
-    margin: 0 5px;
-    transition: all 0.6s ease-in-out;
-    cursor: pointer; 
-}
- 
-.slide video:nth-child(n+5) {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-}
- 
-.carousel button {
-    position: absolute;
-    top: 27.5vh; 
-    transform: translateY(-50%); 
-    z-index: 140;
-    width: 30px;
-    height: 30px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: rgb(240, 230, 210);
-    border: 1px rgb(200, 155, 60) solid;
-    cursor: pointer;
-    border-radius: 50%;
-    display: none;
-    align-items: center;
-    justify-content: center;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
     font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
 }
 
-@media screen and (min-width:1001px){
-    .carousel{
-        height: 77vh;
-    }
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
-.carousel button:first-of-type {
-    left: 10px;
-}
- 
-.carousel button:last-of-type {
-    right: 10px;
-}
- 
-.carousel button:hover {
-    background-color: rgba(200, 155, 60, 0.8);
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
 }
 
-/* Show buttons only on smaller screens */
-@media screen and (max-width:1000px){
-    .carousel button {
-        display: flex;
-    }
-    .slide video:not(:nth-child(1)) {
-        display: none;
-    }
-    .carousel{
-        height: auto;
-    }
-    .showcase{
-        height: 90vh !important;
-    }
-    .showcase-BG-img{
-        height: 100vh;
-    }
-    .showcase .content .des{
-        display: none;
-    }
+.carousel .stat-number {
+    padding: 8px 12px;
+    position: relative;
+    width: 100%;
+    text-align: center;
 }
+
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+    .prev, .next {font-size: 11px}
+}
+
 
 
 /* footer */
