@@ -33,7 +33,9 @@ document.addEventListener('DOMContentLoaded', function() {
     desc: activeSlideContainer.querySelector('.des').textContent.trim()
   };
   
+  // Initialize slide indices
   slides.forEach((slide, index) => {
+    slide.setAttribute('data-index', index);
     slide.addEventListener('click', function() {
       const clickedImg = this.dataset.img;
       const clickedAlt = this.dataset.alt;
@@ -74,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
         bindClickEventToSlide(newSlide);
 
         updateSlideIndices();
+        currentSlideIndex = parseInt(this.getAttribute('data-index'));
         
         activeSlideContainer.classList.remove('fade-out');
         activeSlideContainer.classList.add('fade-in');
@@ -99,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <img src="${imgSrc}" alt="${imgAlt}">
       <div class="text-overlay">
         <div class="topic" id="stat-number">${topic}</div>
-        <div class="des" id="bold-label">${imgAlt}</div>
+        <div class="des" id="bold-label">Click Here</div>
       </div>
     `;
     
@@ -147,6 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
         bindClickEventToSlide(newSlide);
         
         updateSlideIndices();
+        currentSlideIndex = parseInt(this.getAttribute('data-index'));
         
         activeSlideContainer.classList.remove('fade-out');
         activeSlideContainer.classList.add('fade-in');
@@ -160,7 +164,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   function updateSlideIndices() {
     const updatedSlides = document.querySelectorAll('.slides-column .slide');
-    currentSlideIndex = 0;
     
     updatedSlides.forEach((slide, index) => {
       slide.setAttribute('data-index', index);
@@ -175,7 +178,11 @@ document.addEventListener('DOMContentLoaded', function() {
       const updatedSlides = document.querySelectorAll('.slides-column .slide');
       if (currentSlideIndex > 0) {
         currentSlideIndex--;
-        scrollToSlide(currentSlideIndex);
+        clickSlide(currentSlideIndex);
+      } else if (updatedSlides.length > 0) {
+        // Loop to the last slide if at the beginning
+        currentSlideIndex = updatedSlides.length - 1;
+        clickSlide(currentSlideIndex);
       }
     });
     
@@ -183,9 +190,20 @@ document.addEventListener('DOMContentLoaded', function() {
       const updatedSlides = document.querySelectorAll('.slides-column .slide');
       if (currentSlideIndex < updatedSlides.length - 1) {
         currentSlideIndex++;
-        scrollToSlide(currentSlideIndex);
+        clickSlide(currentSlideIndex);
+      } else if (updatedSlides.length > 0) {
+        // Loop to the first slide if at the end
+        currentSlideIndex = 0;
+        clickSlide(currentSlideIndex);
       }
     });
+    
+    function clickSlide(index) {
+      const updatedSlides = document.querySelectorAll('.slides-column .slide');
+      if (updatedSlides[index]) {
+        updatedSlides[index].click();
+      }
+    }
     
     function scrollToSlide(index) {
       const updatedSlides = document.querySelectorAll('.slides-column .slide');
@@ -202,8 +220,6 @@ document.addEventListener('DOMContentLoaded', function() {
             block: 'nearest'
           });
         }
-        
-        updatedSlides[index].click();
       }
     }
   }
