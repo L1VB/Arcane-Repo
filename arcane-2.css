@@ -455,6 +455,7 @@ a:hover {
     position: absolute;
     left: 50%;
     transform: translateY(-50%);
+    cursor: pointer;
 }
 /* text change */
 #lg-view{
@@ -525,15 +526,6 @@ a:hover {
     justify-content: center;
     align-items: center;
 }
-@media screen and (max-width:900px){
-    .music{
-        height: 90vh !important;
-        width: 100vw;
-        margin: 0;
-        z-index: 1;
-    }
-    
-}
 .music#music-img{
     background-image: url('https://d2w9rnfcy7mm78.cloudfront.net/35776200/original_69c1cf4e18a0238c838cd0601e71ce3e.png?1743811557?bc=0');
     background-color: rgba(1, 10, 19, 0.58);  
@@ -575,6 +567,22 @@ a:hover {
     position: relative;
     margin-top: -29em;
     margin-left: 25%;
+}
+@media screen and (max-width: 1182px){
+    .spotify{
+        margin-top: -29em;
+    }
+    .music{
+        height: 90vh !important;
+        width: 100vw;
+        margin: 0;
+        z-index: 1;
+    }
+}
+@media screen and (max-width: 790px){
+    .spotify{
+        margin-top: -27.5em;
+    }
 }
 
 /* smol images */
