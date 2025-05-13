@@ -274,3 +274,69 @@ window.addEventListener('scroll', function() {
         arrow.style.top = 'auto';
     }
 });
+
+// text over - location
+document.addEventListener('DOMContentLoaded', function() {
+  // Only run if we're on a page with text overlays
+  const textOverlays = document.querySelectorAll('.big-img-container .text-overlay');
+  
+  if (textOverlays.length > 0) {
+      initializeTextOverlays();
+  }
+
+  function initializeTextOverlays() {
+      textOverlays.forEach(overlay => {
+          // Wrap content in a container for better measurement
+          const content = overlay.querySelector('.des');
+          if (!content) return;
+          
+          const container = document.createElement('div');
+          container.className = 'read-more-container';
+          content.parentNode.insertBefore(container, content);
+          container.appendChild(content);
+          
+          // Check if content is overflowing
+          checkOverflow(overlay, container);
+          
+          // Re-check on window resize
+          window.addEventListener('resize', () => {
+              checkOverflow(overlay, container);
+          });
+      });
+  }
+
+  function checkOverflow(overlay, container) {
+      // Temporarily expand to measure full height
+      overlay.classList.add('measuring');
+      overlay.style.maxHeight = 'none';
+      
+      const isOverflowing = container.scrollHeight > overlay.clientHeight;
+      
+      // Remove temporary styles
+      overlay.classList.remove('measuring');
+      overlay.style.maxHeight = '';
+      
+      // Find or create the read more button
+      let readMoreBtn = overlay.querySelector('.read-more-btn');
+      
+      if (isOverflowing) {
+          if (!readMoreBtn) {
+              readMoreBtn = document.createElement('button');
+              readMoreBtn.className = 'read-more-btn';
+              readMoreBtn.textContent = 'Read More';
+              
+              readMoreBtn.addEventListener('click', function(e) {
+                  e.stopPropagation();
+                  overlay.classList.toggle('expanded');
+                  readMoreBtn.textContent = overlay.classList.contains('expanded') ? 'Read Less' : 'Read More';
+              });
+              
+              overlay.appendChild(readMoreBtn);
+          }
+          readMoreBtn.style.display = 'block';
+      } else if (readMoreBtn) {
+          readMoreBtn.style.display = 'none';
+          overlay.classList.remove('expanded');
+      }
+  }
+});

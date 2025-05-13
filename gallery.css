@@ -3,7 +3,7 @@ body {
     color: #fff2e0;
     margin: 0;
     font-size: 17px;
-    overflow-x: hidden;
+    overflow-x: hidden
 }
 
 /* import fonts */
@@ -197,13 +197,14 @@ a span:hover{
 }
 
 .topic-row img {
-    height: 25px;
+    height: 20px;
     width: auto;
     margin: 0 5px; 
 }
 
 .topic-row .topic {
     position: relative !important;
+    margin-top: 5px;
 }
 
 .topic-row + .title {

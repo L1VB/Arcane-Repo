@@ -197,13 +197,14 @@ a span:hover{
 }
 
 .topic-row img {
-    height: 25px;
+    height: 20px;
     width: auto;
     margin: 0 5px; 
 }
 
 .topic-row .topic {
     position: relative !important;
+    margin-top: 5px;
 }
 
 .topic-row + .title {
@@ -211,7 +212,6 @@ a span:hover{
     width: 100%;
     margin-top: 10px; 
 }
-
 /* new nav */
 .new-nav {
     width: 100%;
