@@ -32,20 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    var sections = document.querySelectorAll(".about-BG-img, .music#music-img");
-
-    if (sections.length > 0) {
-        window.addEventListener("scroll", function() {
-            sections.forEach(function(section) {
-                var scrollPosition = window.scrollY;
-                var sectionOffset = section.offsetTop;
-                var backgroundPosition = (scrollPosition - sectionOffset) * 0.5;
-
-                section.style.backgroundPosition = "center " + backgroundPosition + "px";
-            });
-        });
-    }
-
     const menuToggle = document.getElementById('menuToggle');
     const menuContent = document.getElementById('menuContent');
 
@@ -66,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// video carousel
+// video carousel - buttons i like
 let tag = document.createElement('script');
 tag.src = "https://www.youtube.com/embed";
 let firstScriptTag = document.getElementsByTagName('script')[0];

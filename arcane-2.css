@@ -408,6 +408,26 @@ a:hover {
     box-sizing: border-box;
 }
 
+/* line-break */
+.line-break{
+    border-top: rgb(200, 155, 60) solid 1px;
+    width: 90%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+}
+.line-break#move{
+    margin-top: 0;
+}
+.line-break#move-2{
+    margin-top: 2.3em;
+}
+@media screen and (max-width:900px){
+    .line-break{
+        margin-top: 70px;
+    }
+}
+
 
 /* Common Styles for Full-Screen Sections */
 .front-cover, .about, .characters {
@@ -528,16 +548,8 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.music#music-img{
-    background-image: url('https://d2w9rnfcy7mm78.cloudfront.net/35776200/original_69c1cf4e18a0238c838cd0601e71ce3e.png?1743811557?bc=0');
-    background-color: rgba(1, 10, 19, 0.632);  
-    z-index: -10;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    background-blend-mode: multiply;
+    padding-bottom: 50px;
+    z-index: 0;
 }
 @media screen and (max-width: 1000px){
     .music#music-img{
@@ -552,7 +564,7 @@ a:hover {
     position: absolute;
     left: 5%;
     right: 5%;
-    top: 35px;
+    top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -624,7 +636,7 @@ a:hover {
  
 /* Original showcase styles */
 .showcase {
-    height: 95vh !important;
+    height: 90vh !important;
     width: 100vw;
     margin: 0;
     position: relative;
@@ -633,7 +645,7 @@ a:hover {
 
 .showcase .content {
     position: relative;
-    padding: 70px 0;
+    padding: 30px 0;
     margin: 0 5%;
 }
 
@@ -645,7 +657,7 @@ a:hover {
 
 @media screen and (max-width: 900px) {
     .showcase {
-        height: 90vh !important;
+        height: 85vh !important;
     }
 }
 
@@ -689,7 +701,7 @@ a:hover {
     width: auto;
     padding: 16px;
     margin-top: -22px;
-    color: white;
+    color: rgb(240, 230, 210);
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
@@ -721,8 +733,12 @@ a:hover {
 }
 
 @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
 }
 
 @media only screen and (max-width: 300px) {

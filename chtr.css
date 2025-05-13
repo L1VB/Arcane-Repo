@@ -573,19 +573,24 @@ footer .content .des#show {
     z-index: 10;
 }
 
+.nav-buttons button{
+    border: rgb(1, 10, 19);
+}
+
 .carousel .nav-btn {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: rgb(240, 230, 210);
-    border: 1px rgb(200, 155, 60) solid;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: rgb(240, 230, 210);
+    font-weight: bold;
     font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
 }
 
 .carousel .prev-btn {
@@ -595,6 +600,16 @@ footer .content .des#show {
 .carousel .next-btn {
     right: 10px;
 }
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
 
 .carousel .active-slide-container {
     width: 60%;
