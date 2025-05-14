@@ -623,14 +623,14 @@ footer .content .des#show {
     width: 60%;
     padding: 0 2em;
     transition: opacity 0.5s ease;
-    overflow: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
 }
 
 .carousel .active-slide-container .active-slide {
     display: flex;
     flex-direction: column;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .carousel .active-slide-container .active-slide img {
@@ -666,32 +666,33 @@ footer .content .des#show {
     height: 6em;
 }
 
+/* ADJUSTED HEIGHT: Modified the slide-overlay height to prevent overflow */
 .carousel .slides-column .slide .slide-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 5.5em; /* Original height: 100% */
+    /* Ensure this height matches exactly with the height of the .slide element (6em) */
+    /* If you need to adjust further, change both .slide height and .slide-overlay height together */
     background-color: rgba(0, 0, 0, 0.1);
     z-index: 1;
     border-radius: 8px;
-}
-
-.carousel .slides-column .slide .slide-overlay img{
-    height: 3em;
 }
 
 .carousel .slides-column .slide:hover {
     transform: scale(1.02);
 }
 
+/* THUMBNAIL IMAGE HEIGHT: This controls the height of the slide thumbnails */
 .carousel .slides-column .slide img {
     width: 100%;
-    height: 6.5em;
+    height: 5.5em; /* This should be equal to or slightly larger than the slide height (6em) */
     object-fit: cover;
     border-radius: 8px;
 }
 
+/* TEXT OVERLAY: Position and styling for the text that appears over thumbnails */
 .carousel .slides-column .slide .text-overlay {
     position: absolute;
     bottom: 0;
