@@ -24,8 +24,49 @@ document.addEventListener('DOMContentLoaded', function() {
   const prevBtn = document.querySelector('.prev-btn');
   const nextBtn = document.querySelector('.next-btn');
   
+  // Define the ordered list of slides for proper navigation
+  const slidesOrder = [
+    {
+      topic: "Season 1 Act 1",
+      img: "https://d2w9rnfcy7mm78.cloudfront.net/36028132/original_e846d7c9b0cd999b65653686bacfe619.png?1744782821?bc=0",
+      alt: "Season1-Act1",
+      desc: "Vi and Powder find their parents dead after a battle in Piltover and are taken in by Vander, a former rebel leader. Years later, the sisters steal from Piltover, but Powder accidentally causes an explosion using magical crystals. Jayce, a Piltover student, is expelled when his arcane experiments are discovered, though Viktor offers to help him continue his work. Meanwhile, crime lord Silco captures Vander after transforming the thug Deckard with a mutagen called shimmer. During a failed rescue attempt, Powder unintentionally kills Mylo and Claggor. Heartbroken, Vi abandons her and is then captured by Marcus, while Silco takes Powder under his wing."
+    },
+    {
+      topic: "Season 1 Act 2",
+      img: "https://d2w9rnfcy7mm78.cloudfront.net/36028101/original_c063881be146af2e0ac0cc95a0e7e599.png?1744782617?bc=0",
+      alt: "Season1-Act2",
+      desc: "Years pass, and Piltover thrives thanks to Jayce's development of Hextech. Powder, now known as Jinx, works for Silco and steals a Hextech gemstone, killing several enforcers in the process. Caitlyn, an enforcer, frees Vi from prison to help track down Silco. Unbeknownst to them, Marcus is secretly working for Silco, while Viktor struggles with a terminal illness. Vi learns that Jinx is now working for Silco, and the sisters briefly reunite before being separated by the Firelights."
+    },
+    {
+      topic: "Season 1 Act 3",
+      img: "https://d2w9rnfcy7mm78.cloudfront.net/35910948/original_94f800a97096d5a9fbf90eb85ee93e7b.png?1744339311?bc=0",
+      alt: "Season1-Act3",
+      desc: "The Firelights are led by Ekko, a childhood friend of Vi and Powder. Jayce and Vi team up to attack shimmer factories, but during a raid, Jayce accidentally kills a child. In an attempt to end the conflict, Jayce offers Silco a deal—Zaun's independence in exchange for Jinx. However, Jinx kidnaps Vi and Caitlyn, forcing a dramatic confrontation with Silco. When Silco tries to shoot Vi, Jinx accidentally kills him instead. Fully embracing her new identity, Jinx fires a gemstone-powered rocket at the Piltover council just as they approve Zaun's independence."
+    },
+    {
+      topic: "Season 2 Act 1",
+      img: "https://static1.srcdn.com/wordpress/wp-content/uploads/2024/11/vi-caitlyn-task-force-gray-arcane-season-2.jpg",
+      alt: "Season2-Act1",
+      desc: "Some councilors survive Jinx's attack, and Caitlyn forms a task force with Vi to capture her. Meanwhile, Zaun's chem-barons battle for control, and Jinx meets and saves a young orphan named Isha. Viktor, now bonded with the Hexcore, gains magical healing abilities. Ambessa survives an assassination attempt, but her daughter Mel is abducted. During an escape, Jinx damages Zaun's air ducts, releasing toxic gas into Piltover. In response, Ambessa enforces martial law, appointing Caitlyn as commander."
+    },
+    {
+      topic: "Season 2 Act 2",
+      img: "https://d2w9rnfcy7mm78.cloudfront.net/36355005/original_79462a8555700ade8f57aa79a0b03899.jpg?1746007769?bc=0",
+      alt: "Season2-Act2",
+      desc: "With Piltover and Noxian forces occupying Zaun, Jinx becomes a local hero. She and Sevika break into Stillwater Hold to rescue Isha, but a human-wolf hybrid created by Singed attacks the prison and recognizes Jinx. The creature is revealed to be Vander, and Vi is finally reunited with both him and Jinx. Meanwhile, Mel discovers her latent magical powers while imprisoned by the Black Rose, and Jayce, after encountering a wild rune, vows to destroy Hextech."
+    },
+    {
+      topic: "Season 2 Act 3",
+      img: "https://i0.wp.com/brignews.com/wp-content/uploads/2024/11/GdKhD91acAEyyOn.jpg?resize=2048,870&ssl=1",
+      alt: "Season2-Act3",
+      desc: "Ekko and Heimerdinger travel to a parallel universe where Hextech was never invented and witness a better outcome. Jayce is shown a post-apocalyptic future caused by Viktor’s unchecked ambitions. Desperate, Viktor allies with Ambessa to attack Piltover after being denied access to the Hexgate anomaly. Vi, believing in her sister’s redemption, releases Jinx—who then turns on her and imprisons her before setting off to “break the cycle of violence.” While Noxian forces distract Piltover with a large-scale assault, Viktor infiltrates the Hex Vault. Jayce ultimately convinces him to abandon his plan, and together they destroy the wild rune, vanishing in the process. In the end, Jinx seemingly sacrifices herself to protect Vi from a feral Vander."
+    }
+  ];
+  
   let currentSlideIndex = 0;
 
+  // Initialize active slide from the DOM
   let activeSlide = {
     img: activeSlideContainer.querySelector('img').src,
     alt: activeSlideContainer.querySelector('img').alt,
@@ -33,7 +74,12 @@ document.addEventListener('DOMContentLoaded', function() {
     desc: activeSlideContainer.querySelector('.des').textContent.trim()
   };
   
-  // Initialize slide indices
+  // Find the current index in the ordered list
+  function findCurrentOrderIndex() {
+    return slidesOrder.findIndex(slide => slide.topic === activeSlide.topic);
+  }
+  
+  // Initialize slide indices and click handlers
   slides.forEach((slide, index) => {
     slide.setAttribute('data-index', index);
     slide.addEventListener('click', function() {
@@ -170,58 +216,87 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  if (prevBtn && nextBtn && slides.length > 0) {
-    const slideWidth = slides[0].offsetWidth + 
-      (parseInt(window.getComputedStyle(slides[0]).marginRight) || 20);
-    
+  // Fixed navigation for small screens
+  if (prevBtn && nextBtn) {
     prevBtn.addEventListener('click', function() {
-      const updatedSlides = document.querySelectorAll('.slides-column .slide');
-      if (currentSlideIndex > 0) {
-        currentSlideIndex--;
-        clickSlide(currentSlideIndex);
-      } else if (updatedSlides.length > 0) {
-        // Loop to the last slide if at the beginning
-        currentSlideIndex = updatedSlides.length - 1;
-        clickSlide(currentSlideIndex);
-      }
+      const currentOrderIndex = findCurrentOrderIndex();
+      
+      if (currentOrderIndex === -1) return; // Safety check
+      
+      // Calculate the previous index, looping back to the last slide if at the first
+      const prevOrderIndex = currentOrderIndex > 0 ? currentOrderIndex - 1 : slidesOrder.length - 1;
+      const prevSlide = slidesOrder[prevOrderIndex];
+      
+      // Update active slide with animation
+      activeSlideContainer.classList.add('fade-out');
+      
+      setTimeout(() => {
+        activeSlideContainer.innerHTML = `
+          <div class="active-slide">
+            <img src="${prevSlide.img}" alt="${prevSlide.alt}">
+            <div class="topic" id="h4">${prevSlide.topic}</div>
+            <div class="des" id="medium-body">
+              ${prevSlide.desc}
+            </div>
+          </div>
+        `;
+        
+        // Update active slide reference
+        activeSlide = {
+          img: prevSlide.img,
+          alt: prevSlide.alt,
+          topic: prevSlide.topic,
+          desc: prevSlide.desc
+        };
+        
+        activeSlideContainer.classList.remove('fade-out');
+        activeSlideContainer.classList.add('fade-in');
+        
+        setTimeout(() => {
+          activeSlideContainer.classList.remove('fade-in');
+        }, 500);
+      }, 500);
     });
     
     nextBtn.addEventListener('click', function() {
-      const updatedSlides = document.querySelectorAll('.slides-column .slide');
-      if (currentSlideIndex < updatedSlides.length - 1) {
-        currentSlideIndex++;
-        clickSlide(currentSlideIndex);
-      } else if (updatedSlides.length > 0) {
-        // Loop to the first slide if at the end
-        currentSlideIndex = 0;
-        clickSlide(currentSlideIndex);
-      }
+      const currentOrderIndex = findCurrentOrderIndex();
+      
+      if (currentOrderIndex === -1) return; // Safety check
+      
+      // Calculate the next index, looping back to the first slide if at the last
+      const nextOrderIndex = (currentOrderIndex + 1) % slidesOrder.length;
+      const nextSlide = slidesOrder[nextOrderIndex];
+      
+      // Update active slide with animation
+      activeSlideContainer.classList.add('fade-out');
+      
+      setTimeout(() => {
+        activeSlideContainer.innerHTML = `
+          <div class="active-slide">
+            <img src="${nextSlide.img}" alt="${nextSlide.alt}">
+            <div class="topic" id="h4">${nextSlide.topic}</div>
+            <div class="des" id="medium-body">
+              ${nextSlide.desc}
+            </div>
+          </div>
+        `;
+        
+        // Update active slide reference
+        activeSlide = {
+          img: nextSlide.img,
+          alt: nextSlide.alt,
+          topic: nextSlide.topic,
+          desc: nextSlide.desc
+        };
+        
+        activeSlideContainer.classList.remove('fade-out');
+        activeSlideContainer.classList.add('fade-in');
+        
+        setTimeout(() => {
+          activeSlideContainer.classList.remove('fade-in');
+        }, 500);
+      }, 500);
     });
-    
-    function clickSlide(index) {
-      const updatedSlides = document.querySelectorAll('.slides-column .slide');
-      if (updatedSlides[index]) {
-        updatedSlides[index].click();
-      }
-    }
-    
-    function scrollToSlide(index) {
-      const updatedSlides = document.querySelectorAll('.slides-column .slide');
-      if (slidesColumn && updatedSlides[index]) {
-        if (window.innerWidth <= 900) {
-          const targetPos = index * slideWidth;
-          slidesColumn.scrollTo({
-            left: targetPos,
-            behavior: 'smooth'
-          });
-        } else {
-          updatedSlides[index].scrollIntoView({
-            behavior: 'smooth',
-            block: 'nearest'
-          });
-        }
-      }
-    }
   }
 });
 
