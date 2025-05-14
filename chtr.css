@@ -495,9 +495,17 @@ footer .content .des#show {
     position: relative;
     top: 80px;
 }
+.line-break#move{
+    margin-top: 70px;
+    padding-bottom: 40px;
+}
 @media screen and (max-width:900px){
     .line-break{
         margin-top: 70px;
+    }
+    .line-break#move{
+        margin-top: 110px;
+        padding-bottom: 20px;
     }
 }
 
@@ -667,6 +675,10 @@ footer .content .des#show {
     background-color: rgba(0, 0, 0, 0.1);
     z-index: 1;
     border-radius: 8px;
+}
+
+.carousel .slides-column .slide .slide-overlay img{
+    height: 3em;
 }
 
 .carousel .slides-column .slide:hover {
