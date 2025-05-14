@@ -484,7 +484,7 @@ a:hover {
 #sm-view{
     display: none;
 }
-@media screen and (max-width: 900px){
+@media screen and (max-width: 1100px){
     #lg-view{
         display: none;
     }
@@ -529,9 +529,10 @@ a:hover {
 
 @media screen and (max-width: 1300px){
     .about{
-        height: 40vh;
+        height: 50vh;
         margin: 0;
         z-index: 1;
+        margin-top: -10px;
     }
 
     .about .content#about-section img{
